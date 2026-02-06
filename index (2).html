@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AESCOMPT</title>
+    <meta name="description" content="AESCOMPT - Business OS Intelligent avec Authentification Biométrique Native.">
+    <meta name="theme-color" content="#ca8a04">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="AESCOMPT">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/512/000000/sales-performance.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; background: #020617; color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .mali-gradient { background: linear-gradient(135deg, #14532d 0%, #ca8a04 50%, #991b1b 100%); }
+        
+        #splash-screen {
+            position: fixed;
+            inset: 0;
+            background: #020617;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+        .splash-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, #14532d 0%, #ca8a04 50%, #991b1b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 25px 60px rgba(202, 138, 4, 0.4);
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 25px 60px rgba(202, 138, 4, 0.3); }
+            50% { transform: scale(1.1); box-shadow: 0 35px 80px rgba(202, 138, 4, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 25px 60px rgba(202, 138, 4, 0.3); }
+        }
+        .splash-text {
+            margin-top: 32px;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            font-size: 32px;
+            color: white;
+        }
+        .loader-bar {
+            width: 180px;
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-top: 24px;
+            overflow: hidden;
+        }
+        .loader-progress {
+            width: 40%;
+            height: 100%;
+            background: #ca8a04;
+            animation: load 1.5s infinite ease-in-out;
+        }
+        @keyframes load {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(450%); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "html5-qrcode": "https://esm.sh/html5-qrcode@^2.3.8"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="splash-screen">
+        <div class="splash-logo">A</div>
+        <div class="splash-text">AESCOMPT</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <p style="margin-top: 48px; color: #475569; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em;">Propulsé par Gemini 2.0 & Vision IA</p>
+    </div>
+    <div id="root"></div>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                if (splash) {
+                    splash.style.opacity = '0';
+                    setTimeout(() => splash.style.display = 'none', 500);
+                }
+            }, 1800);
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "AESCOMPT",
+  "short_name": "AESCOMPT",
+  "description": "Business OS Intelligent - Gestion & Finance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#ca8a04",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/fluency/192/000000/sales-performance.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://img.icons8.com/fluency/512/000000/sales-performance.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

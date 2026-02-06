@@ -1,0 +1,11 @@
+{
+  "name": "AESCOMPT",
+  "description": "Business OS Intelligent avec Authentification Biométrique Native et IA Vocale.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation",
+    "publickey-credentials-get",
+    "publickey-credentials-create"
+  ]
+}
